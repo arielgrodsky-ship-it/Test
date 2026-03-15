@@ -22,7 +22,6 @@ function validateForm() {
         return;
     }
 
-
     const basicEmailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!basicEmailPattern.test(email)) {
         alert("Invalid email! Make sure it contains an @ and .");
@@ -45,27 +44,25 @@ function validateForm() {
         return;
     }
 
-    const submitBtn = document.getElementById("submitBtn");
+    // --- UPDATED FETCH CALLS BELOW ---
 
     // GET – שולח בקשה עם נתונים ב-URL
-    submitBtn.addEventListener("click", () => {
-        fetch("http://localhost:3000/get?username=" + username + "&email=" + email + "&age=" + age + "&phone=" + phone + "&issue=" + issue)
-            .then(res => res.text())
-            .then(data => alert(data))
-            .catch(err => console.error(err));
-    });
+    // Updated to use your live Render URL!
+    fetch("https://test-qq91.onrender.com/get?username=" + username + "&email=" + email + "&age=" + age + "&phone=" + phone + "&issue=" + issue)
+        .then(res => res.text())
+        .then(data => alert("GET Response: " + data))
+        .catch(err => console.error(err));
 
     // POST – שולח בקשה עם נתונים בגוף הבקשה
-    submitBtn.addEventListener("click", () => {
-        fetch("http://localhost:3000/post", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ name: username, email: email , phone: phone})
-        })
-        .then(res => res.text())
-        .then(data => alert(data))
-        .catch(err => console.error(err));
-});
+    // Updated to use your live Render URL!
+    fetch("https://test-qq91.onrender.com/post", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name: username, email: email , phone: phone})
+    })
+    .then(res => res.text())
+    .then(data => alert("POST Response: " + data))
+    .catch(err => console.error(err));
 }

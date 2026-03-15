@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 // מאפשר קריאת JSON מהבקשה
 app.use(bodyParser.json());
@@ -24,6 +24,6 @@ app.post("/post", (req, res) => {
     res.send("POST request התקבל!");
 });
 // הפעלת השרת
-app.listen(port, () => {
-    console.log(`the server is running : http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
