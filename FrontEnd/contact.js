@@ -4,6 +4,7 @@ function validateForm() {
     const age = document.getElementById("age").value;
     const phone = document.getElementById("Tel").value;
     const issue = document.getElementById("Issue").value;
+    const issueText = document.getElementById("IssueText").value;
 
     const usernamePattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]+$/;
 
@@ -48,7 +49,7 @@ function validateForm() {
 
     // GET – שולח בקשה עם נתונים ב-URL
     // Updated to use your live Render URL!
-    fetch("https://test-qq91.onrender.com/get?username=" + username + "&email=" + email + "&age=" + age + "&phone=" + phone + "&issue=" + issue)
+    fetch("https://test-qq91.onrender.com/get?username=" + username + "&email=" + email + "&age=" + age + "&phone=" + phone + "&issue=" + issue + "&issueText=" + issueText)
         .then(res => res.text())
         .then(data => alert("GET Response: " + data))
         .catch(err => console.error(err));
