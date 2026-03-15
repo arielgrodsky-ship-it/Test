@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jersey+20&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sixtyfour&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nosifer&display=swap">
+    <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header_wrap">
+                <div class="up_head">
+                    <div class="img"><img class="logo" src="img/logo.png" alt="logo" /> </div>
+                    <div class="h1"><h1>Freddy's Home</h1></div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contacts.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="Form">
+                <h2>Contact Us</h2>
+                <form id="myForm">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form_select" id="username" name="username" placeholder="username"><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" class="form_select" id="email" value="@gmail.com"><br><br>
+
+                    <label for="age">Age:</label>   
+                    <input type="number" class="form_select" id="age" name="age" value="16" min="15" max="120"><br><br>
+
+                    <label for="Tel">Phone:</label><br>
+                    <input type="tel" class="form_select" id="Tel" name="Telephone" value="05"pattern="[0-9]{10}"><br><br>
+
+                    <label for="Issue" >Issue:</label>
+                    <select name="Issue" class="form_select" id="Issue">
+                        <option value="">Select an issue</option>
+                        <option value="bugs">Bugs</option>
+                        <option value="technical">Technical</option>
+                        <option value="general question">General</option>
+                    </select><br><br>
+                    <label for="message">Tell us more about your issue:</label><br>
+                    <textarea name="complaint" class="form_select" id="message" rows="10" cols="50" placeholder="Please describe your issue in detail..."></textarea><br><br>
+
+                    <button type="button" id="submitBtn" onclick="validateForm()">Submit</button>
+                </form>
+            </div>
+                <p class="contact_us">If you have any questions, feel free to contact us!
+                    <a class="contact_info" href="mailto:groariel@gmail.com">groariel@gmail.com</a>
+                    <a class="contact_info" href="tel:0542574433">0542574433</a>
+                </p> 
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer_wrap">
+                <div class="links">
+                    <a href="https://www.instagram.com/ariel_grodsky/">
+                        <div class="social">
+                            <img src="img/insta.jpg" alt="insta" />
+                        </div>
+                    </a>
+                    <a href="https://www.tiktok.com/en/">
+                        <div class="social">
+                            <img src="img/tiktok.png" alt="tiktok" />
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/@FuhNaff">
+                        <div class="social">
+                            <img src="img/youtube.png" alt="youtube" />
+                        </div>
+                    </a>
+                </div>
+
+                <div class="down_foot">
+                    <div class="img_foot"><img class="logo" src="img/logo.png" alt="logo" /></div>
+                    <div class="nav_foot">
+                        <nav>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contacts.html">Contact</a></li>
+                            </ul>
+                        </nav>                      
+                    </div>
+                </div>                
+                <p id="rights">© 2025 My Website. All rights reserved to ariel grodsky.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="contact.js"></script>
+</body>
+</html>
