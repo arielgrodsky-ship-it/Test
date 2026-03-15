@@ -5,7 +5,8 @@ const PORT = process.env.PORT || 3000;
 
 // מאפשר קריאת JSON מהבקשה
 app.use(bodyParser.json());
-
+const cors = require('cors');
+app.use(cors()); // This unlocks the door for Netlify!
 // מאפשר CORS כדי שה-FE יוכל לשלוח בקשות
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
