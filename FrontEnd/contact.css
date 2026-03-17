@@ -1,15 +1,19 @@
 /* ========== BASE STYLES ========== */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #1a1a1a;
-    color: white;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: white;
+            margin: 0;
+            padding: 0;  
+            background-color: #1a1a1a; 
+            background-image: linear-gradient(rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url('https://i.pinimg.com/736x/c6/e8/59/c6e8593be42f400230081bc3e16d666b.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            }
 html, body {
     height: 100%;
     margin: 0;

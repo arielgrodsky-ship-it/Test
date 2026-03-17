@@ -4,7 +4,7 @@ function validateForm() {
     const age = document.getElementById("age").value;
     const phone = document.getElementById("Tel").value;
     const issue = document.getElementById("Issue").value;
-    const issueText = document.getElementById("IssueText").value;
+    const issueText = document.getElementById("message").value;
 
     const usernamePattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_]+$/;
 

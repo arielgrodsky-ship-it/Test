@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Freddy's Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sixtyfour&display=swap">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Form box styling to match your dark FNAF theme */
+        header {
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        padding: 20px 0;
+        border-radius: 50px;
+        }
+        h2 {
+            font-size: 30px;
+            font-family: 'Press Start 2P', monospace;
+        }
+
+        h3 {
+            font-family: 'Press Start 2P', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #ff0000;
+        }
+
+        p {
+            font-size: 23px;
+            font-family: 'Jersey 10', monospace;
+            text-transform: uppercase;
+        }
+
+        ul {
+            font-size: 20px;
+            font-family: 'Sixtyfour', monospace;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: white;
+            margin: 0;
+            padding: 0;  
+            background-color: #1a1a1a; 
+            background-image: linear-gradient(rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0.6)), url('https://i.pinimg.com/736x/c6/e8/59/c6e8593be42f400230081bc3e16d666b.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+                    }
+
+        .form-container {
+            background: #111;
+            border: 2px solid #8b0000;
+            padding: 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+            text-align: left;
+        }
+        
+        .form-container h2 { 
+            text-align: center; 
+            color: white; 
+            margin-bottom: 20px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 18px;
+            text-shadow: 0 0 5px red;
+        }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { font-family: 'Jersey 10', monospace; font-size: 24px; color: white; display: block; margin-bottom: 5px; }
+        
+        .form-group input { 
+            width: 100%; padding: 10px; border: 1px solid #555; 
+            background: #222; color: white; border-radius: 4px; 
+            font-family: Arial, sans-serif; box-sizing: border-box;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #8b0000;
+        }
+        
+        .submit-btn {
+            width: 100%; padding: 12px; background: #8b0000; color: white;
+            border: none; border-radius: 4px; cursor: pointer; 
+            font-family: 'Press Start 2P', monospace; font-size: 12px;
+            margin-top: 10px; transition: 0.3s;
+        }
+        
+        .submit-btn:hover { background: #ff0000; box-shadow: 0 0 10px red; }
+        
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #ccc;
+            font-family: 'Jersey 10', monospace;
+            font-size: 22px;
+        }
+        
+        .login-link a {
+            color: #ff0000;
+            text-decoration: none;
+        }
+        
+        .login-link a:hover { text-decoration: underline; }
+        footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 40px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: 50px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header_wrap">
+                <div class="up_head">
+                    <div class="img"><img class="logo" src="img/logo.png" alt="logo" /> </div>
+                    <div class="h1"><h1>Freddy's Home</h1></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div style="position: relative;">
+                        <input type="password" id="password" name="password" required>
+                        <span id="togglePassword" style="position: absolute; right: 10px; top: 10px; cursor: pointer;">
+                            👁️
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div style="position: relative;">
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <span id="toggleConfirmPassword" style="position: absolute; right: 10px; top: 10px; cursor: pointer;">
+                            👁️
+                        </span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">CREATE ACCOUNT</button>
+            </form>
+            
+            <div class="login-link">
+                Already have an account? <a href="login.html">Log In</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer_wrap">
+                <div class="links">
+                    <a href="https://www.instagram.com/ariel_grodsky/">
+                        <div class="social">
+                            <img src="img/insta.jpg" alt="insta" />
+                        </div>
+                    </a>
+                    <a href="https://www.tiktok.com/en/">
+                        <div class="social">
+                            <img src="img/tiktok.png" alt="tiktok" />
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/@FuhNaff">
+                        <div class="social">
+                            <img src="img/youtube.png" alt="youtube" />
+                        </div>
+                    </a>
+                </div>
+
+                <div class="down_foot">
+                    <div class="img_foot"><img class="logo" src="img/logo.png" alt="logo" /></div>
+                    <div class="nav_foot">                     
+                    </div>
+                </div>                
+                <p id="rights">© 2025 My Website. All rights reserved to ariel grodsky.</p>
+            </div>
+        </div>
+    </footer>
+<script>
+    // Toggle Password Visibility
+    function setupPasswordToggle(inputId, toggleId) {
+        const inputField = document.getElementById(inputId);
+        const toggleBtn = document.getElementById(toggleId);
+        if (inputField && toggleBtn) {
+            toggleBtn.addEventListener('click', function() {
+                if (inputField.type === 'password') {
+                    inputField.type = 'text';
+                    toggleBtn.textContent = '🙈'; 
+                } else {
+                    inputField.type = 'password';
+                    toggleBtn.textContent = '👁️'; 
+                }
+            });
+        }
+    }
+    setupPasswordToggle('password', 'togglePassword');
+    setupPasswordToggle('confirm-password', 'toggleConfirmPassword');
+
+    // Handle the Form Submit
+    document.getElementById('signup-form').addEventListener('submit', async function(e) {
+        e.preventDefault(); 
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        // Basic frontend validation
+        if (name === "" || email === "" || password === "") {
+            return alert("Please fill in all fields!");
+        }
+        if (password !== confirmPassword) {
+            return alert("Passwords do not match!");
+        }
+
+        // Send to Backend
+        try {
+            const response = await fetch('https://test-qq91.onrender.com/api/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, password })
+            });
+
+            const data = await response.text();
+
+            if (response.ok) {
+                alert("Sign up successful! Taking you to login...");
+                // Send them to the login page!
+                window.location.href = "login.html"; 
+            } else {
+                alert(data); // Shows the error from the server
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Could not connect to the server. Make sure server.js is running!");
+        }
+    });
+</script>
+</body>
+</html>
