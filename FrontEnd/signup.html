@@ -141,8 +141,8 @@
             <h2>Sign Up</h2>
             <form id="signup-form">
                 <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
                 </div>
                 
                 <div class="form-group">
@@ -174,7 +174,7 @@
             </form>
             
             <div class="login-link">
-                Already have an account? <a href="index.html">Log In</a>
+                Already have an account? <a href="login.html">Log In</a>
             </div>
         </div>
     </main>
@@ -209,19 +209,15 @@
         </div>
     </footer>
 <script>
-    // Toggle Password Visibility
+    // Toggle Password Visibility (The classic eye icon)
     function setupPasswordToggle(inputId, toggleId) {
         const inputField = document.getElementById(inputId);
         const toggleBtn = document.getElementById(toggleId);
         if (inputField && toggleBtn) {
             toggleBtn.addEventListener('click', function() {
-                if (inputField.type === 'password') {
-                    inputField.type = 'text';
-                    toggleBtn.textContent = '🙈'; 
-                } else {
-                    inputField.type = 'password';
-                    toggleBtn.textContent = '👁️'; 
-                }
+                const isPassword = inputField.type === 'password';
+                inputField.type = isPassword ? 'text' : 'password';
+                toggleBtn.textContent = isPassword ? '🙈' : '👁️'; 
             });
         }
     }
@@ -232,39 +228,43 @@
     document.getElementById('signup-form').addEventListener('submit', async function(e) {
         e.preventDefault(); 
 
-        const name = document.getElementById('name').value.trim();
+        // Changed 'name' to 'username' to match standard database setups
+        const username = document.getElementById('username').value.trim();
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirm-password').value;
 
-        // Basic frontend validation
-        if (name === "" || email === "" || password === "") {
-            return alert("Please fill in all fields!");
+        if (username === "" || email === "" || password === "") {
+            return alert("REJECTED: Fill in all fields.");
         }
         if (password !== confirmPassword) {
-            return alert("Passwords do not match!");
+            return alert("REJECTED: Passwords do not match.");
         }
 
-        // Send to Backend
         try {
+            // Now sending username instead of name!
             const response = await fetch('https://test-qq91.onrender.com/api/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, password })
+                body: JSON.stringify({ username, email, password })
             });
 
             const data = await response.text();
 
             if (response.ok) {
-                alert("Sign up successful! Taking you to login...");
-                // Send them to the login page!
+                // LOCKING IN THE USERNAME
+                localStorage.setItem('userName', username); 
+                
+                alert("ACCESS GRANTED. Welcome to the crew, " + username + ".");
+                
+                // Redirect straight to home to see the name in action
                 window.location.href = "index.html"; 
             } else {
-                alert(data); // Shows the error from the server
+                alert("SYSTEM ERROR: " + data);
             }
         } catch (err) {
             console.error(err);
-            alert("Could not connect to the server. Make sure server.js is running!");
+            alert("CONNECTION LOST: Server is unreachable.");
         }
     });
 </script>
