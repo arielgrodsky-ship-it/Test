@@ -9,8 +9,45 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jersey+20&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sixtyfour&display=swap">
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Makes the text blink creepily on the enter screen */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        /* Essential styles for the User Info section after login */
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-family: 'Jersey 10', monospace;
+        }
+        .user-name {
+            color: #ff0000;
+            font-size: 20px;
+            text-shadow: 0 0 5px red;
+        }
+        .logout-link {
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 2px 5px;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
+    <audio id="fan-sound" src="img/Fan.mp3" loop></audio>
+    <audio id="dramatic-welcome" src="img/welcome.mp3"></audio>
+
+    <div id="enter-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000000; z-index: 99999; display: flex; justify-content: center; align-items: center; cursor: pointer; flex-direction: column;">
+        <h1 style="color: #8b0000; font-family: 'Press Start 2P', monospace; text-shadow: 0 0 15px red; text-align: center; font-size: 24px; letter-spacing: 2px;">SYSTEM READY</h1>
+        <p style="color: white; font-family: 'Jersey 10', monospace; font-size: 24px; margin-top: 20px; animation: blink 1.5s infinite;">[ CLICK ANYWHERE TO ENTER THE FACTORY ]</p>
+    </div>
+
     <header>
         <div class="container">
             <div class="header_wrap">
@@ -90,57 +127,24 @@
                 <h2>Services</h2>
                 <div class="service_wrap">
                     <div class="up_serv">
-                        <a href="#">
-                            <div class="services">
-                                <img class="serv" src="img/database.png" alt="database" />
-                                <h3>Animatronics Database</h3>
-                                <p>Details about animatronic abilities</p>
-                                <span class="views">👁 0 views</span>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="services">
-                                <img class="serv" src="img/story.png" alt="story" />
-                                <h3>Story & Lore Explanations</h3>
-                                <p>Simple summary of FNAF's story</p>
-                                <span class="views">👁 0 views</span>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="services">
-                                <img class="serv" src="img/gaming.png" alt="gaming" />
-                                <h3>Gameplay & Survival Tips</h3>
-                                <p>Survival guides for game nights</p>
-                                <span class="views">👁 0 views</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="down_serv">
-                        <a href="#">
-                            <div class="services">
-                                <img class="serv" src="img/secret.png" alt="secret" />
-                                <h3>Secrets & Easter Eggs</h3>
-                                <p>Revealing secrets and hidden clues</p>
-                                <span class="views">👁 0 views</span>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="services">
-                                <img class="serv" src="img/video.png" alt="video" />
-                                <h3>Movies & Videos</h3>
-                                <p>Videos about the FNAF game</p>
-                                <span class="views">👁 0 views</span>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="services">
-                                <img class="serv" src="img/time.png" alt="time" />
-                                <h3>Timeline Overview</h3>
-                                <p>Timeline of all events in FNAF</p>
-                                <span class="views">👁 0 views</span>
-                            </div>
-                        </a>
+                        <div class="services">
+                            <img class="serv" src="img/database.png" alt="database" />
+                            <h3>Animatronics Database</h3>
+                            <p>Details about animatronic abilities</p>
+                            <span class="views">👁 0 views</span>
+                        </div>
+                        <div class="services">
+                            <img class="serv" src="img/story.png" alt="story" />
+                            <h3>Story & Lore Explanations</h3>
+                            <p>Simple summary of FNAF's story</p>
+                            <span class="views">👁 0 views</span>
+                        </div>
+                        <div class="services">
+                            <img class="serv" src="img/gaming.png" alt="gaming" />
+                            <h3>Gameplay & Survival Tips</h3>
+                            <p>Survival guides for game nights</p>
+                            <span class="views">👁 0 views</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -151,42 +155,21 @@
         <div class="container">
             <div class="footer_wrap">
                 <div class="links">
-                    <a href="https://www.instagram.com/ariel_grodsky/">
-                        <div class="social">
-                            <img src="img/insta.jpg" alt="insta" />
-                        </div>
-                    </a>
-                    <a href="https://www.tiktok.com/en/">
-                        <div class="social">
-                            <img src="img/tiktok.png" alt="tiktok" />
-                        </div>
-                    </a>
-                    <a href="https://www.youtube.com/@FuhNaff">
-                        <div class="social">
-                            <img src="img/youtube.png" alt="youtube" />
-                        </div>
-                    </a>
+                    <a href="https://www.instagram.com/ariel_grodsky/"><div class="social"><img src="img/insta.jpg" alt="insta" /></div></a>
+                    <a href="https://www.tiktok.com/en/"><div class="social"><img src="img/tiktok.png" alt="tiktok" /></div></a>
+                    <a href="https://www.youtube.com/@FuhNaff"><div class="social"><img src="img/youtube.png" alt="youtube" /></div></a>
                 </div>
-
                 <div class="down_foot">
                     <div class="img_foot"><img class="logo" src="img/logo.png" alt="logo" /></div>
-                    <div class="nav_foot">
-                        <nav>
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contacts.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
                 </div>
                 <p id="rights">© 2025 My Website. All rights reserved to ariel grodsky.</p>
             </div>
         </div>
     </footer>
 
-<script>
-    window.onload = function() {
+    <script>
+// 1. Auth Logic - Runs when the page loads
+    window.addEventListener('load', () => {
         const savedName = localStorage.getItem('userName');
         const authSection = document.getElementById('auth-section');
 
@@ -198,12 +181,54 @@
                 </div>
             `;
         }
-    }
+        
+        // --- NEW: Check if already entered this session ---
+        const enterScreen = document.getElementById('enter-screen');
+        if (sessionStorage.getItem('hasEntered') === 'true' && enterScreen) {
+            enterScreen.style.display = "none";
+            // Browser still needs ONE click anywhere to allow sound 
+            // even if the black screen is gone.
+            document.addEventListener('click', startAmbience, { once: true });
+        }
+    });
 
     function logout() {
         localStorage.removeItem('userName');
         window.location.reload();
     }
-</script>
+
+    // 2. Sound Logic
+    const enterScreen = document.getElementById('enter-screen');
+    const welcomeSound = document.getElementById('dramatic-welcome');
+    const fanSound = document.getElementById('fan-sound');
+
+    function startAmbience() {
+        if (fanSound) {
+            fanSound.volume = 0.1; 
+            fanSound.play().catch(e => console.log("Fan waiting for click..."));
+        }
+    }
+
+    if (enterScreen) {
+        enterScreen.addEventListener('click', () => {
+            // Save to session so the screen doesn't show again
+            sessionStorage.setItem('hasEntered', 'true');
+
+            if (welcomeSound) {
+                welcomeSound.volume = 0.5; 
+                welcomeSound.play();
+            }
+
+            startAmbience();
+
+            enterScreen.style.transition = "opacity 1s ease";
+            enterScreen.style.opacity = "0";
+            setTimeout(() => {
+                enterScreen.style.display = "none";
+            }, 1000);
+        });
+    }
+
+    </script>
 </body>
 </html>
